@@ -108,3 +108,9 @@ select{
 .hidden {
     display: none;
 }
+
+@media screen and (max-width: 400px) {
+    .hour, .minute, .second, .sep {
+        font-size: 3em;
+    }
+}

@@ -16,7 +16,8 @@ const $button_stop = document.querySelector("#button_stop")
 const $button_start = document.querySelector("#button_start")
 const $button_reset = document.querySelector("#button_reset")
 
-let isTime = false
+const $modal_cancer = document.querySelector("#modal_cancer")
+
 let time = 0
 let curTime = 0
 let interval = null
@@ -29,8 +30,15 @@ $button_stop.addEventListener("click",() => {
     $button_stop.classList.add("hidden")
 })
 
+$modal_cancer.addEventListener("click",() => {
+    $exit.click()
+})
+
 $button_start.addEventListener("click", () => {
-    startTime()
+    if (curTime !== 0) {
+        console.log(curTime)
+        startTime()
+    }
 })
 
 $button_reset.addEventListener("click",() => {
@@ -53,6 +61,9 @@ $modal_start.addEventListener("click",() => {
     time += parseInt($minute_select.value) * 60
     time += parseInt($second_select.value)
 
+    if (time === 0) {
+        return
+    }
     curTime = time
 
     if (interval) {
@@ -99,15 +110,17 @@ function startTime () {
     $button_stop.classList.remove("hidden")
 
     interval = setInterval(() => {
-        // 시간을 업데이트 해준다.
+        curTime -= 1
+
+        setTime(curTime)
+
         if (curTime === 0) {
             audio.play()
+            $button_start.classList.remove("hidden")
+            $button_stop.classList.add("hidden")
             clearInterval(interval)
         }
         
-        setTime(curTime)
-
-        curTime -= 1
         
     },1000)
 } 
