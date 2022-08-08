@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.timer-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer{
+    max-width: 400px;
+    width: 100%;
+}
+
+.timer header {
+    display: flex;
+    justify-content: center;
+}
+.hour,.minute,.second,.sep {
+    font-size: 6em;
+}
+.sep {
+    margin: 0 5px;   
+}
+
+.timer footer {
+    text-align: center;
+}
+
+.revise,.reset,.start ,.stop{
+    padding: .5em 1em;
+}
+
+.timer-modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0);
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease-in-out all;
+}
+.timer-modal.show{
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.25);
+    pointer-events: auto;
+}
+
+.timer-modal .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.timer-modal.show .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.modal header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #0090dd;
+}
+.modal h2 {
+    color: white;
+    
+}
+.modal main {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+select{
+    width: 50px;
+    height: 40px;
+    outline: none;
+    margin-top: 10px;
+    border: 1px solid;
+}
+
+.modal footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px;
+    background: rgb(199, 199, 199);
+    gap: 15px;
+    border-top: 1px solid;
+}
+.hidden {
+    display: none;
+}

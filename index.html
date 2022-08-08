@@ -4,49 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <script src="script.js" defer></script>
+    <title>Timer</title>
 </head>
 <body>
-    <div class="timer-modal">
+    <div id="timer_modal" class="timer-modal">
         <div class="modal">
             <header>
+                <h2>타이머 수정</h2>
+                <i id="exit" class="uil uil-multiply"></i>
+            </header>
+            <main>
                 <div class="revise-hour">
                     <p>시간</p>
-                    <select name="hour" id="hour-select">
-                        <option value="00">00</option>
+                    <select name="hour" id="hour_select">
                     </select>
                 </div>
                 <div class="revise-minute">
                     <p>분</p>
-                    <select name="minute" id="minute-select">
-                        <option value="00">00</option>
+                    <select name="minute" id="minute_select">
                     </select>
                 </div>
                 <div class="revise-second">
                     <p>초</p>
-                    <select name="hour" id="hour-second">
-                        <option value="00">00</option>
+                    <select name="second" id="second_select">
                     </select>
                 </div>
-            </header>
+            </main>
             <footer>
-
+                <button id="modal_cancer">아니요</button>
+                <button id="modal_start">시작</button>
             </footer>
         </div>
     </div>
     <div class="timer-wrapper">
         <div class="timer">
             <header>
-                <div class="hour">00</div>
+                <div id="hour_timer" class="hour">00</div>
                 <div class="sep">:</div>
-                <div class="minute">00</div>
+                <div id="minute_timer" class="minute">00</div>
                 <div class="sep">:</div>
-                <div class="second">00</div>
+                <div id="second_timer" class="second">00</div>
             </header>
             <footer>
-                <button class="revise">타이머 수정</button>
-                <button class="reset">재설정</button>
-                <button class="start">시작</button>
+                <button id="button_revise" class="revise">타이머 수정</button>
+                <button id="button_reset" class="reset">재설정</button>
+                <button id="button_start" class="start">시작</button>
+                <button id="button_stop" class="stop hidden">중지</button>
             </footer>
         </div>
     </div>
